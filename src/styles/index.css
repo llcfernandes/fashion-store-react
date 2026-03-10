@@ -1,0 +1,169 @@
+@import "tailwindcss";
+
+@theme {
+  /* Colors */
+  --color-sand-50: #FAFAF9;
+  --color-sand-100: #F5F0EB;
+  --color-sand-200: #EBE3D9;
+  --color-sand-300: #D9CCBF;
+  --color-sand-400: #C0AF9D;
+  --color-sand-500: #9E8E7A;
+  --color-sand-600: #7A6D5E;
+  --color-sand-700: #564D42;
+  --color-sand-800: #302B25;
+  --color-sand-900: #1C1812;
+  --color-sand-950: #0E0B08;
+  --color-blush: #E4B8AD;
+  --color-terra: #B07050;
+
+  /* Fonts */
+  --font-display: "Cormorant Garamond", Georgia, serif;
+  --font-body: "Jost", system-ui, sans-serif;
+}
+
+@layer base {
+  html { scroll-behavior: smooth; }
+
+  body {
+    background-color: var(--color-sand-100);
+    color: var(--color-sand-900);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background-color: var(--color-blush);
+    color: var(--color-sand-900);
+  }
+
+  ::-webkit-scrollbar { width: 4px; }
+  ::-webkit-scrollbar-track { background: var(--color-sand-100); }
+  ::-webkit-scrollbar-thumb { background: var(--color-sand-400); border-radius: 2px; }
+}
+
+.btn-dark {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  background-color: var(--color-sand-900);
+  color: var(--color-sand-100);
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--color-sand-700);
+    transform: translateY(-1px);
+  }
+}
+
+.btn-outline-dark {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  border: 1px solid var(--color-sand-400);
+  color: var(--color-sand-800);
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  background: none;
+  cursor: pointer;
+
+  &:hover {
+    border-color: var(--color-sand-700);
+    color: var(--color-sand-900);
+  }
+}
+
+.eyebrow {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-terra);
+  margin-bottom: 0.75rem;
+  display: block;
+}
+
+/* ─── Micro-interactions & animations ──────────────────────────────────────
+   Feature implementada por Lucas Fernandes — Desenvolvedor Web
+   ─────────────────────────────────────────────────────────────────────────*/
+
+/* Cart icon bounce when item is added via fly animation */
+@keyframes cart-bounce {
+  0%   { transform: scale(1); }
+  35%  { transform: scale(1.35); }
+  60%  { transform: scale(0.9); }
+  80%  { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+.cart-bounce {
+  animation: cart-bounce 0.4s cubic-bezier(0.36, 0.07, 0.19, 0.97) forwards;
+}
+
+/* Smooth page transitions */
+main {
+  animation: fadeIn 0.35s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Toast / added feedback pulse */
+@keyframes pulse-once {
+  0%   { box-shadow: 0 0 0 0 rgba(176, 112, 80, 0.4); }
+  70%  { box-shadow: 0 0 0 10px rgba(176, 112, 80, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(176, 112, 80, 0); }
+}
+
+/* Product card image zoom — smooth and natural */
+.product-img-zoom {
+  transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.product-img-zoom:hover {
+  transform: scale(1.05);
+}
+
+/* Skeleton loading state */
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--color-sand-200) 25%,
+    var(--color-sand-100) 50%,
+    var(--color-sand-200) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* Focus ring — accessibility */
+:focus-visible {
+  outline: 2px solid var(--color-terra);
+  outline-offset: 3px;
+}
+
+/* Smooth scrollbar */
+* {
+  scroll-behavior: smooth;
+}

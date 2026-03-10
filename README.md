@@ -18,27 +18,6 @@ Site editorial para loja de moda feminina. Design boutique de luxo com paleta ar
 | React Icons | ^5.5.0 |
 | React Intersection Observer | ^9.16.0 |
 
-## 🆕 Tailwind CSS v4 — O que mudou
-
-Tailwind v4 usa **configuração CSS-first**. Não há mais `tailwind.config.js` nem `postcss.config.js`.
-
-**Setup (vite.config.js):**
-```js
-import tailwindcss from '@tailwindcss/vite'
-export default defineConfig({ plugins: [react(), tailwindcss()] })
-```
-
-**CSS (src/styles/index.css):**
-```css
-@import "tailwindcss";
-
-@theme {
-  --color-sand-100: #F5F0EB;
-  --color-terra: #B07050;
-  --font-display: "Cormorant Garamond", serif;
-}
-```
-
 ## 📁 Estrutura de Pastas
 
 ```
@@ -61,16 +40,6 @@ src/
 ├── App.jsx
 └── main.jsx
 ```
-
-## 🚀 Como Rodar
-
-```bash
-npm install
-npm run dev     # http://localhost:5173
-npm run build
-npm run preview
-```
-
 ## 🎨 Identidade Visual
 
 | Elemento | Valor |
@@ -81,13 +50,6 @@ npm run preview
 | Fonte display | Cormorant Garamond |
 | Fonte corpo | Jost |
 | CSS | Tailwind CSS v4 |
-
-## 🔧 Personalização
-
-Substitua os dados genéricos:
-- `lumenstudio.moda` → Instagram real
-- `(00)` → telefone real
-- `5500000000000` → WhatsApp real
 
 ---
 

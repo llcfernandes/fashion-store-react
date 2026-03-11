@@ -52,5 +52,6 @@ src/
 | CSS | Tailwind CSS v4 |
 
 ---
+LINK: https://fashion-store-react-es8aswoy4-lucas-fernandes-projects-7bd0b04b.vercel.app
 
 Desenvolvido por **Lucas Fernandes** – Desenvolvedor Web

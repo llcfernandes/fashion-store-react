@@ -1,6 +1,6 @@
 # Lumen Studio – Boutique de Moda 👗
 
-Template premium para boutique de moda feminina, desenvolvido com React + Vite + **Tailwind CSS v4**.
+Template premium para boutique de moda feminina, desenvolvido com React + Vite + Tailwind CSS.
 
 ## ✨ Visão Geral
 
